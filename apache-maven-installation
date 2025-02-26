@@ -1,5 +1,5 @@
 ___________How to install Apache Maven in Redhat_________
-1) Prerequisite:-
+1)# Prerequisite:-
 -AWS Account.
 -Create Redhat EC2 T2.medium Instance with 4GB of RAM.
 -Create Security Group and open Required ports.
@@ -8,8 +8,7 @@ ___________How to install Apache Maven in Redhat_________
 2) # install wget
 sudo yum install wget
 
-3) Install Java JDK 11+ and other software (GIT, wget and tree)
-
+3) #Install Java JDK 11+ and other software (GIT, wget and tree)
 # Install Java JDK 11+ as a pre-requisite for maven to run.
 sudo hostnamectl set-hostname maven
 sudo su - ec2-user
@@ -17,27 +16,28 @@ cd /opt
 sudo yum install wget nano tree unzip git-all -y
 sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 java -version
-git –version
+git -version
 ____________________________________________________________________________________________
-Download wget
-For Redhat systems such as RHEL(Red Hat Enterprise) or CentOS use the command sudo yum install wget
-Thus the package manager for Redhat is yum
-For Ubuntu or Derbian use the command sudo apt-get install wget
-Thus the package manager for Ubuntu is apt
+#Download wget
+#For Redhat systems such as RHEL(Red Hat Enterprise) or CentOS use the command sudo yum install wget
+#Thus the package manager for Redhat is yum
+#For Ubuntu or Derbian use the command sudo apt-get install wget
+#Thus the package manager for Ubuntu is apt
 ____________________________________________________________________________________________
-    Download unzip
-4)For Redhat use the command sudo yum install unzip
-For Ubuntu use the command sudo apt-get install unzip
+#Download unzip
+4)#For Redhat use the command sudo yum install unzip
+#For Ubuntu use the command sudo apt-get install unzip
 
-5) Download, extract and Install Maven
+5) #Download, extract and Install Maven
 #Step1) Download the Maven Software
 sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip
 sudo unzip apache-maven-3.9.4-bin.zip
 sudo rm -rf apache-maven-3.9.4-bin.zip
 sudo mv apache-maven-3.9.4/ maven
 
-6) DO THIS STEP SEPARATELY    Set Environmental Variable - For Specific User eg ec2-user.
-Run the command ls -a /home/ec2-user/
+6)#DO THIS STEP SEPARATELY    Set Environmental Variable - For Specific User eg ec2-user.
+Run the command:- 
+ls -a /home/ec2-user/
 The out put will be: .bash_logout   .bash_profile   .bashhrc  .ssh
 Then run:                  vi ~/.bash_profile. The out put will be:-
 _________________________________
@@ -55,12 +55,12 @@ __________________________________________
 export M2_HOME=/opt/maven
 export PATH=$PATH:$M2_HOME/bin
 
-It is good practice to always update the package repository before installing a new software. Run the command sudo yum update
-Now install maven using the command sudo yum install maven
+#It is good practice to always update the package repository before installing a new software. Run the command sudo yum update
+Now install maven using the command 
+sudo yum install maven
 
-  7) sudo yum update
+7) sudo yum update
 #Refresh the profile file and Verify if maven is running
 source ~/.bash_profile
 mvn -version    or mvn -v        
-
-8) sudo yum install maven                 
+                 
