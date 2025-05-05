@@ -30,10 +30,10 @@ ________________________________________________________________________________
 
 5) #Download, extract and Install Maven
 #Step1) Download the Maven Software
-sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip
-sudo unzip apache-maven-3.9.4-bin.zip
-sudo rm -rf apache-maven-3.9.4-bin.zip
-sudo mv apache-maven-3.9.4/ maven
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip
+sudo unzip apache-maven-3.9.9-bin.zip
+sudo rm -rf apache-maven-3.9.9-bin.zip
+sudo mv apache-maven-3.9.9/ maven
 
 6)#DO THIS STEP SEPARATELY    Set Environmental Variable - For Specific User eg ec2-user.
 Run the command:- 
@@ -42,24 +42,16 @@ The out put will be: .bash_logout   .bash_profile   .bashhrc  .ssh
 Then run:                  vi ~/.bash_profile. The out put will be:-
 _________________________________
  # .bash_profile
-
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
-
 # User specific environment and startup programs
-~
 __________________________________________
- # and add the lines below to the above output just below the green highlighted # .bash_Profile
+ # and add the lines below to the above output just below the # .bash_Profile
 export M2_HOME=/opt/maven
 export PATH=$PATH:$M2_HOME/bin
 
-#It is good practice to always update the package repository before installing a new software. Run the command sudo yum update
-Now install maven using the command 
-sudo yum install maven
-
-7) sudo yum update
 #Refresh the profile file and Verify if maven is running
 source ~/.bash_profile
 mvn -version    or mvn -v        
