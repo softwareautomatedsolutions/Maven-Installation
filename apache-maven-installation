@@ -6,7 +6,7 @@ ___________How to install Apache Maven in Redhat________
 -Attach Security Group to EC2 Instance. Leave the port setting as is because by default port 22 is selected
 
 2) # install wget
-sudo yum install wget
+sudo yum install wget -y
 
 3) #Install Java JDK 11+ and other software (GIT, wget and tree)
 # Install Java JDK 11+ as a pre-requisite for maven to run.
